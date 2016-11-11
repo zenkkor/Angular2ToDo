@@ -2,6 +2,7 @@
 
 This is just a test project to see what Angular2 Can do.  
 
+![preview](https://dl.dropboxusercontent.com/u/22100434/angular2todo.png "Preview")
 
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.

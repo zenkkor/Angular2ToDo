@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ToDoAppComponent } from './to-do-app/to-do-app.component';
 
+// Bootstrap
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,8 @@ import { ToDoAppComponent } from './to-do-app/to-do-app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+	AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

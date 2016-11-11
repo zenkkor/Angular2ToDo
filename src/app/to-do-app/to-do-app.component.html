@@ -1,32 +1,26 @@
-<section class="todoapp">
+<section class="todoapp container">
 
-  <header class="header">
-    <h1>To Do</h1>
-    <input class="new-todo" placeholder="What's your todo list?" autofocus="" [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+  <header class="row header">
+    <div class="col-xs-12">
+      <h1>Hey! Input your To Do item and hit enter.</h1>
+      <input class="new-todo form-control input-lg" placeholder="What's your todo list?" autofocus="" [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+    </div>
   </header>
 
-  <section class="main" *ngIf="todos.length > 0">
+  <section class="main row" *ngIf="todos.length > 0">
+    <div class="col-xs-12">
+      <ul class="todo-list">
 
-    <ul class="todo-list">
-      <li *ngFor="let todo of todos" [class.state]="todo.state">
-        <div class="view">
-          <input class="toggle" type="checkbox" (click)="toggleToDoState(todo)" [checked]="todo.state">
-          <label>{{todo.title}}</label>
-          <button class="destroy" (click)="removeToDo(todo)">x</button>
-        </div>
-      </li>
-    </ul>
+        <li *ngFor="let todo of todos; let i = index" [class.state]="todo.state">
+          <div class="view">
+            <input [attr.id]="i" class="checkbox-custom" type="checkbox" (click)="toggleToDoState(todo)" [checked]="todo.state">
+            <label [attr.for]="i" class="checkbox-custom-label">{{todo.title}}</label>
+            <span class="delete text-danger" (click)="removeToDo(todo)">x</span>
+          </div>
+        </li>
+      </ul>
+    </div>
 
   </section>
-
-  <footer class="footer" *ngIf="todos.length > 0">
-
-    <span class="todo-count">
-      <strong>{{todos.length}}</strong>
-      {{todos.length == 1 ? 'item' : 'items'}}
-      left
-  	</span>
-
-  </footer>
 
 </section>
